@@ -76,7 +76,7 @@ def get_top_slowest_deliverers(df):
              .groupby(['City', 'Delivery_person_ID'])
              .mean()
              .sort_values(['City', 'Time_taken(min)'], ascending=False)
-             .reset_index())
+             .reset_index())st.dataframe(df2, height=493)
     return pd.concat([
         df2.loc[df2['City'] == 'Metropolitian', :].head(10),
         df2.loc[df2['City'] == 'Urban', :].head(10),
